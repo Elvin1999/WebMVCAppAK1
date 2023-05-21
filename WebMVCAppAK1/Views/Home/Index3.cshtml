@@ -1,0 +1,27 @@
+﻿@*@model List<WebMVCAppAK1.Models.Employee>
+
+@foreach(var item in Model){
+    <section>
+    <h1>Id : @item.Id</h1>
+    <h2>Fullname @item.Firstname - @item.Lastname</h2>
+    <hr />
+    </section>
+}*@
+
+
+@model WebMVCAppAK1.Models.EmployeeViewModel
+
+@foreach (var item in Model.Employees)
+{
+    <section>
+        <h1>Id : @item.Id</h1>
+        <h2>Fullname @item.Firstname - @item.Lastname</h2>
+        <hr />
+    </section>
+}
+
+@foreach(var item in Model.Cities){
+    <section>
+        <p>@item</p>
+    </section>
+}
