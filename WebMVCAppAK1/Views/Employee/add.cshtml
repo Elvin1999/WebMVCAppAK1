@@ -1,0 +1,32 @@
+﻿@model EmployeeAddViewModel
+
+<section>
+    <form asp-controller="Employee" asp-action="Add">
+        <section>
+            <label asp-for="Employee.Id"></label>
+            <input asp-for="Employee.Id" required />
+            <span style="color:red;" asp-validation-for="Employee.Id"></span>
+        </section>
+        <section>
+        <label asp-for="Employee.Firstname"></label>
+        <input asp-for="Employee.Firstname" required />
+            <span style="color:red;" asp-validation-for="Employee.Firstname"></span>
+        </section>
+        <section>
+            <label asp-for="Employee.Lastname"></label>
+            <input asp-for="Employee.Lastname" required />
+            <span style="color:red;" asp-validation-for="Employee.Lastname"></span>
+        </section>
+        <section>
+            <label asp-for="Employee.CityId" required
+            ></label>
+           <select asp-for="Employee.CityId"
+           asp-items="Model.Cities"
+           ></select>
+        </section>
+        <section>
+            <label asp-for="Employee.CityId"></label>
+           <button type="submit">Submit</button>
+        </section>
+    </form>
+</section>

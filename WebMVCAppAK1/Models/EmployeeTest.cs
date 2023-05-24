@@ -1,6 +1,6 @@
 ﻿namespace WebMVCAppAK1.Models
 {
-    public class Employee
+    public class EmployeeTest
     {
         public int Id { get; set; }
         public int CityId { get; set; }

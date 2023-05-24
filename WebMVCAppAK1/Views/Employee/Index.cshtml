@@ -1,0 +1,29 @@
+﻿@model EmployeeListViewModel
+
+    <div class="list-group">
+@foreach (var item in Model.Employees)
+{
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start mt-1">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">@item.Firstname</h5>
+                <small>@item.Lastname</small>
+            <a class="btn btn-danger">Update</a>
+            <a asp-action="Delete" asp-controller="Employee" 
+            asp-route-id="@item.Id"
+            class="btn btn-danger">Delete</a>
+            </div>
+            <p class="mb-1">City NO : @item.CityId</p>
+        </a>
+
+
+}
+    </div>
+    <div class="container">
+        <div class="mx-auto">
+            <div class="row">
+            <a asp-controller="Employee" asp-action="Add"
+            class="btn btn-primary">Add New Employee</a>
+            <a class="btn btn-secondary">Update Employee</a>
+            </div>
+        </div>
+    </div>

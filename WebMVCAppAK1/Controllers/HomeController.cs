@@ -28,16 +28,16 @@ namespace WebMVCAppAK1.Controllers
 
         public IActionResult Index3()
         {
-            List<Employee> employees = new List<Employee>
+            List<EmployeeTest> employees = new List<EmployeeTest>
             {
-                new Employee
+                new EmployeeTest
                 {
                     Id=1,
                      CityId=10,
                       Firstname="Elvin",
                        Lastname="Camalzade"
                 },
-                new Employee
+                new EmployeeTest
                 {
                     Id=2,
                      CityId=55,
@@ -87,16 +87,16 @@ namespace WebMVCAppAK1.Controllers
 
         public JsonResult GetJson()
         {
-            List<Employee> employees = new List<Employee>
+            List<EmployeeTest> employees = new List<EmployeeTest>
             {
-                new Employee
+                new EmployeeTest
                 {
                     Id=1,
                      CityId=10,
                       Firstname="Elvin",
                        Lastname="Camalzade"
                 },
-                new Employee
+                new EmployeeTest
                 {
                     Id=2,
                      CityId=55,
@@ -108,16 +108,16 @@ namespace WebMVCAppAK1.Controllers
         }
         public JsonResult Index9(int id=-1)
         {
-            List<Employee> employees = new List<Employee>
+            List<EmployeeTest> employees = new List<EmployeeTest>
             {
-                new Employee
+                new EmployeeTest
                 {
                     Id=1,
                      CityId=10,
                       Firstname="Elvin",
                        Lastname="Camalzade"
                 },
-                new Employee
+                new EmployeeTest
                 {
                     Id=2,
                      CityId=55,
@@ -131,16 +131,16 @@ namespace WebMVCAppAK1.Controllers
 
         public JsonResult Index10(string name="",int id = -1)
         {
-            List<Employee> employees = new List<Employee>
+            List<EmployeeTest> employees = new List<EmployeeTest>
             {
-                new Employee
+                new EmployeeTest
                 {
                     Id=1,
                      CityId=10,
                       Firstname="Elvin",
                        Lastname="Camalzade"
                 },
-                new Employee
+                new EmployeeTest
                 {
                     Id=2,
                      CityId=55,
