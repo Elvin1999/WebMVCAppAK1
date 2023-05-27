@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebMVCAppAK1.Services;
 
 namespace WebMVCAppAK1
 {
@@ -24,6 +25,9 @@ namespace WebMVCAppAK1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+          //  services.AddSingleton<ICalculatorService, SimpleCalculatorService>();
+          //  services.AddScoped<ICalculatorService, SimpleCalculatorService>();
+            services.AddTransient<ICalculatorService, SimpleCalculatorService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

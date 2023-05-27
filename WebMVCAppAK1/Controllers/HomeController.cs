@@ -6,14 +6,31 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using WebMVCAppAK1.Models;
+using WebMVCAppAK1.Services;
 
 namespace WebMVCAppAK1.Controllers
 {
     public class HomeController : Controller
     {
+        //private ICalculatorService _calculatorService;
+
+        //public HomeController(ICalculatorService calculatorService)
+        //{
+        //    _calculatorService = calculatorService;
+        //}
+
+        private ICalculatorService _calculatorService1;
+        private ICalculatorService _calculatorService2;
+
+        public HomeController(ICalculatorService calculatorService1, ICalculatorService calculatorService2)
+        {
+            _calculatorService1 = calculatorService1;
+            _calculatorService2 = calculatorService2;
+        }
+
         public string Index55()
         {
-            return $"Hello from Index Action";
+            return $"Hello from Index Action {_calculatorService1.Calculate(55)}";
         }
 
         public IActionResult Index()
