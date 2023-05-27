@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -8,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebMVCAppAK1.Models;
+using WebMVCAppAK1.Repositories;
 using WebMVCAppAK1.Services;
 
 namespace WebMVCAppAK1
@@ -28,6 +31,16 @@ namespace WebMVCAppAK1
           //  services.AddSingleton<ICalculatorService, SimpleCalculatorService>();
           //  services.AddScoped<ICalculatorService, SimpleCalculatorService>();
             services.AddTransient<ICalculatorService, SimpleCalculatorService>();
+
+            services.AddScoped<IStudentRepository, StudentRepository>();
+            services.AddScoped<IStudentService, StudentService>();
+
+            var conn = Configuration.GetConnectionString("myconn");
+            services.AddDbContext<SchoolDbContext>(opt =>
+            {
+                opt.UseSqlServer(conn);
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
